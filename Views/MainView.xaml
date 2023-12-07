@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:templates="clr-namespace:Notes.Views.Templates"
+             x:Class="Notes.Views.MainView"
+             Title="Main">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Priority="1" IconImageSource="add" Clicked="OnAddNote"/>
+        <ToolbarItem IconImageSource="logout" Clicked="OnLogoutClicked"/>
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+        <StackLayout HorizontalOptions="Center" Margin="20" Spacing="20">
+            <Label HorizontalTextAlignment="Center" FontSize="24" Text="all notes is here."/>
+            <BoxView HeightRequest="5" CornerRadius="100" Margin="8, 0, 8, 0" Color="{StaticResource Secondary}"/>
+            <CollectionView x:Name="collectionView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <templates:NoteTemplate/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                <CollectionView.EmptyViewTemplate>
+                    <DataTemplate>
+                        <Label 
+                            Text="No notes." 
+                            TextColor="Wheat"/>
+                    </DataTemplate>
+                </CollectionView.EmptyViewTemplate>
+                </CollectionView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

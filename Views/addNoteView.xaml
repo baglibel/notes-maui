@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.addNoteView"
+             Title="Add Note">
+    <Grid RowDefinitions="60,200,50,50" Margin="10" RowSpacing="10">
+        <Entry x:Name="txtTitle" Grid.Row="0" Placeholder="Title"/>
+        <Editor x:Name="txtContent" Grid.Row="1" Placeholder="Content"/>
+        <Picker Grid.Row="2" x:Name="colorPicker" SelectedIndex="0" Title="Select a color" SelectedIndexChanged="colorPicker_SelectedIndexChanged">
+            <Picker.Items>
+                <x:String>White</x:String>
+                <x:String>Red</x:String>
+                <x:String>Green</x:String>
+                <x:String>Blue</x:String>
+                <x:String>Purple</x:String>
+                <x:String>Orange</x:String>
+            </Picker.Items>
+        </Picker>
+        <Button x:Name="btnAddNote" Grid.Row="3" Text="Add Note" Background="{StaticResource Primary}" TextColor="Black" Clicked="onAddNoteButtonClicked"/>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.Templates.NoteTemplate"
+             >
+    <Grid>
+        <Frame CornerRadius="10" BackgroundColor="{Binding Color}" Padding="15" Margin="0,0,0,10">
+            <Grid RowDefinitions="40,*,20" RowSpacing="10">
+                <Grid Grid.Row="0" ColumnDefinitions="*,40,40">
+                    <Label Text="{Binding Title}" TextColor="Black" FontSize="24"/>
+                    <Button x:Name="btnEdit" Clicked="OnClickEdit" ClassId="{Binding Id}" Grid.Column="2" ImageSource="edit" Background="Transparent"/>
+                </Grid>
+                <Label Grid.Row="1" Text="{Binding Content}" TextColor="Black" FontSize="15"/>
+                <Label Grid.Row="2" Text="{Binding Date}" TextColor="Black" Opacity="0.5" FontSize="13"/>
+            </Grid>
+        </Frame>
+    </Grid>
+</ContentView>

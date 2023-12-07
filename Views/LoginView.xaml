@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.LoginView"
+             Title="Login">
+    <StackLayout HorizontalOptions="Fill" VerticalOptions="Start" Margin="10,50,10,10">
+        <Grid RowDefinitions="Auto,*,50,50,50,20" RowSpacing="20">
+            <Image Grid.Row="0" Source="face" HeightRequest="100"/>
+            <Label Grid.Row="1" HorizontalOptions="Center" Text="Privacy is very important to everyone." TextColor="{StaticResource Secondary}"/>
+            <Entry x:Name="entryUsername" Grid.Row="2" Placeholder="Username"/>
+            <Entry x:Name="entryPassword" Grid.Row="3" Placeholder="Password" IsPassword="True" />
+            <Button x:Name="btnLogin" Grid.Row="4" Text="Login" BackgroundColor="{StaticResource Primary}" TextColor="{StaticResource Secondary}" Clicked="OnLoginClicked"/>
+            <Label x:Name="lblError" Grid.Row="5" HorizontalOptions="Center" Text="" TextColor="Red" Opacity="0.8"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>
